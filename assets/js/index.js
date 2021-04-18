@@ -18,7 +18,7 @@ function isAnagrams(word1, word2) {
   return !result.length;
 }
 function isAnagrams2(word1, word2) {
-  if (!word1.length || !word2.length || word1.length !== word2.length) return false;
+  if (!word1.length || !word2.length || word1.length !== word2.length || word1.trim().toLowerCase() === word2.trim().toLowerCase()) return false;
   const preparedWord1 = word1.trim().toLowerCase().split('').sort().join('');
   const preparedWord2 = word2.trim().toLowerCase().split('').sort().join('');
   return preparedWord1 === preparedWord2;
