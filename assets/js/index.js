@@ -29,6 +29,18 @@ function countVowels(string, array) {
 /*3. Написать функцию, которая принимает массив с числами и возвращает новый массив,
  который содержит отрицательные числа из первого массива.*/
 
- function getNegativeValues(){
-   
- }
+function getNegativeValues(array) {
+  return array.map(value => value > 0 ? value - value * 2 : value)
+}
+
+// console.log(getNegativeValues([3,0,-7, 44, 1, 23, 4, 11, 31, 12, 48]))
+
+/*4. Написать функцию, которая принимает массив и возвращает новый массив,
+ состоящий только из уникальных значений первого массива (значения не должны повторяться).*/
+
+function getUniqueValues(array) {
+  const result = [];
+  array.filter(val => { if (!result.includes(val)){result.push(val)}});
+  return result;
+}
+console.log( getUniqueValues([4,5,2,3,4,21,32,1,1,2,1,2,4]), 'unique')
