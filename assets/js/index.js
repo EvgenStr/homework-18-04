@@ -18,12 +18,13 @@ function isAnagrams(word1, word2) {
   return !result.length;
 }
 function isAnagrams2(word1, word2) {
-  if(word1 || word2 || word1.length !== word2.length) return false;
-  const preparedWord1 = word1.trim().toLowerCase().split('').sort().join("");
-  const preparedWord2 = word2.trim().toLowerCase().split('').sort().join("");
+  if (!word1.length || !word2.length || word1.length !== word2.length) return false;
+  const preparedWord1 = word1.trim().toLowerCase().split('').sort().join('');
+  const preparedWord2 = word2.trim().toLowerCase().split('').sort().join('');
   return preparedWord1 === preparedWord2;
+  // return word1.trim().toLowerCase().split('').sort().join('') === word2.trim().toLowerCase().split('').sort().join('');
 }
-// console.log(isAnagrams2('test', 'tes3t'))
+// console.log(isAnagrams2('ttqest', 'tetfst'))
 // console.log(isAnagrams("   test ", " tetsfewf "));
 /******************************************************/
 //2. Написать функцию, которая подсчитывает количество гласных в строке.
