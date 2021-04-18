@@ -18,4 +18,6 @@ console.log(isAnagrams("   test ", " tetsfewf "));
 
 //2. Написать функцию, которая подсчитывает количество гласных в строке.
 
-function countVowels(){}
+function countVowels(){
+  
+}
