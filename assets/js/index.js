@@ -8,12 +8,11 @@
  * @returns {boolean}
  */
 function isAnagrams(word1, word2) {
-  if (word1.trim().length !== word2.trim().length || word1.trim().toLowerCase() === word2.trim().toLowerCase()) return false;
+  if (word1.trim().toLowerCase().length !== word2.trim().toLowerCase().length || word1.trim().toLowerCase() === word2.trim().toLowerCase()) return false;
   return word1.trim().toLowerCase().split('').sort().join('') === word2.trim().toLowerCase().split('').sort().join('');
 }
 // console.log(isAnagrams('test', 'test'))
 // console.log(isAnagrams("   test ", " tets "));
-
 /******************************************************/
 //2. Написать функцию, которая подсчитывает количество гласных в строке.
 const vowelsLetters = ['a', 'e', 'i', 'o', 'u'];
@@ -27,7 +26,6 @@ function countIncludes(string, array) {
   return string.trim().toLowerCase().split("").reduce((acc, letter) => { return array.includes(letter) ? acc + 1 : acc }, 0);
 }
 // console.log(countIncludes("wq  di oy dfa", vowelsLetters), 'count');
-
 /******************************************************/
 /*3. Написать функцию, которая принимает массив с числами и возвращает новый массив,
  который содержит отрицательные числа из первого массива.*/
@@ -40,7 +38,6 @@ function getNegativeValues(array) {
   return array.map(value => value > 0 ? value * -1 : value)
 }
 // console.log(getNegativeValues([3, 0, -7, 44, 1, 23, 4, 11, 31, 12, 48]))
-
 /******************************************************/
 /*4. Написать функцию, которая принимает массив и возвращает новый массив,
  состоящий только из уникальных значений первого массива (значения не должны повторяться).*/
