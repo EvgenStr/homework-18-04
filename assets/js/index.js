@@ -23,10 +23,10 @@ const vowelsLetters = ['a', 'e', 'i', 'o', 'u'];
  * @returns {number}
  */
 function countIncludes(string, array) {
-  if (typeof string !== 'string') throw new TypeError('Words must be a string type');
+  if (typeof string !== 'string' || !array instanceof Array) throw new TypeError('Words must be a string type, array need a Array instance');
   return string.trim().toLowerCase().split("").reduce((acc, letter) => { return array.includes(letter) ? acc + 1 : acc }, 0);
 }
-// console.log(countVowels("wqdioydfa", vowelsLetters), 'count');
+// console.log(countIncludes("wq  di oy dfa", vowelsLetters), 'count');
 
 /******************************************************/
 /*3. Написать функцию, которая принимает массив с числами и возвращает новый массив,
