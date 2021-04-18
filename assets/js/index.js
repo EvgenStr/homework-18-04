@@ -5,6 +5,10 @@
 
 function isAnagrams(word1, word2) {
   if (typeof word1 !== 'string' || typeof word2 !== 'string') {
-    throw new TypeError('Words must be a string type')
+    throw new TypeError('Words must be a string type');
   }
+  if (!word1.length|| !word2.length) throw new RangeError(`${word1.length?'second word empty':'first word empty'}`);
+  if (word1.length !== word2.length) return false;
+  
+
 }
