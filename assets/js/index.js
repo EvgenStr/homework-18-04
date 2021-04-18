@@ -14,10 +14,17 @@ function isAnagrams(word1, word2) {
   return !result.length;
 }
 
-console.log(isAnagrams("   test ", " tetsfewf "));
+// console.log(isAnagrams("   test ", " tetsfewf "));
 
 //2. Написать функцию, которая подсчитывает количество гласных в строке.
 
-function countVowels(){
-  
+const vowelsLetters = ['a', 'e', 'i', 'o', 'u']
+function countVowels(string, array) {
+  if (typeof string !== 'string') throw new TypeError('Words must be a string type');
+  return string.trim().toLowerCase().split("").reduce((acc, letter) => { return array.includes(letter) ? acc + 1 : acc }, 0);
 }
+
+// console.log(countVowels("wqdioydfa", vowelsLetters), 'count');
+
+/*3. Написать функцию, которая принимает массив с числами и возвращает новый массив,
+ который содержит отрицательные числа из первого массива.*/
