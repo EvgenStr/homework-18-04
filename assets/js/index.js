@@ -8,24 +8,11 @@
  * @returns {boolean}
  */
 function isAnagrams(word1, word2) {
-  if (typeof word1 !== 'string' || typeof word2 !== 'string') throw new TypeError('Words must be a string type');
-  const trimmedWord1 = word1.trim();
-  const trimmedWord2 = word2.trim();
-  if (!trimmedWord1.length || !trimmedWord2.length) throw new RangeError(`${trimmedWord1.length ? 'second word empty' : 'first word empty'}`);
-  if (trimmedWord1.length !== trimmedWord2.length) return false;
-  let result = trimmedWord1.toLowerCase().split("");
-  trimmedWord2.toLowerCase().split("").forEach(elem => result.indexOf(elem) >= 0 ? result.splice(result.indexOf(elem), 1) : null);
-  return !result.length;
+  if (word1.trim().length !== word2.trim().length || word1.trim().toLowerCase() === word2.trim().toLowerCase()) return false;
+  return word1.trim().toLowerCase().split('').sort().join('') === word2.trim().toLowerCase().split('').sort().join('');
 }
-function isAnagrams2(word1, word2) {
-  if (!word1.length || !word2.length || word1.length !== word2.length || word1.trim().toLowerCase() === word2.trim().toLowerCase()) return false;
-  const sortedWord1 = word1.trim().toLowerCase().split('').sort().join('');
-  const sortedWord2 = word2.trim().toLowerCase().split('').sort().join('');
-  return sortedWord1 === sortedWord2;
-  // return word1.trim().toLowerCase().split('').sort().join('') === word2.trim().toLowerCase().split('').sort().join('');
-}
-// console.log(isAnagrams2('ttqest', 'tetfst'))
-// console.log(isAnagrams("   test ", " tetsfewf "));
+// console.log(isAnagrams('test', 'test'))
+// console.log(isAnagrams("   test ", " tets "));
 
 /******************************************************/
 //2. Написать функцию, которая подсчитывает количество гласных в строке.
