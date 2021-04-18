@@ -19,13 +19,14 @@ function isAnagrams(word1, word2) {
 }
 function isAnagrams2(word1, word2) {
   if (!word1.length || !word2.length || word1.length !== word2.length || word1.trim().toLowerCase() === word2.trim().toLowerCase()) return false;
-  const preparedWord1 = word1.trim().toLowerCase().split('').sort().join('');
-  const preparedWord2 = word2.trim().toLowerCase().split('').sort().join('');
-  return preparedWord1 === preparedWord2;
+  const sortedWord1 = word1.trim().toLowerCase().split('').sort().join('');
+  const sortedWord2 = word2.trim().toLowerCase().split('').sort().join('');
+  return sortedWord1 === sortedWord2;
   // return word1.trim().toLowerCase().split('').sort().join('') === word2.trim().toLowerCase().split('').sort().join('');
 }
 // console.log(isAnagrams2('ttqest', 'tetfst'))
 // console.log(isAnagrams("   test ", " tetsfewf "));
+
 /******************************************************/
 //2. Написать функцию, которая подсчитывает количество гласных в строке.
 const vowelsLetters = ['a', 'e', 'i', 'o', 'u'];
@@ -38,8 +39,8 @@ function countIncludes(string, array) {
   if (typeof string !== 'string') throw new TypeError('Words must be a string type');
   return string.trim().toLowerCase().split("").reduce((acc, letter) => { return array.includes(letter) ? acc + 1 : acc }, 0);
 }
-
 // console.log(countVowels("wqdioydfa", vowelsLetters), 'count');
+
 /******************************************************/
 /*3. Написать функцию, которая принимает массив с числами и возвращает новый массив,
  который содержит отрицательные числа из первого массива.*/
@@ -51,8 +52,8 @@ function getNegativeValues(array) {
   if (!array instanceof Array) throw new TypeError('Need a Array');
   return array.map(value => value > 0 ? value * -1 : value)
 }
-
 // console.log(getNegativeValues([3, 0, -7, 44, 1, 23, 4, 11, 31, 12, 48]))
+
 /******************************************************/
 /*4. Написать функцию, которая принимает массив и возвращает новый массив,
  состоящий только из уникальных значений первого массива (значения не должны повторяться).*/
