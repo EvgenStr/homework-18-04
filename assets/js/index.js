@@ -28,7 +28,7 @@ const vowelsLetters = ['a', 'e', 'i', 'o', 'u'];
  * @param {array} array 
  * @returns {number}
  */
-function countVowels(string, array) {
+function countIncludes(string, array) {
   if (typeof string !== 'string') throw new TypeError('Words must be a string type');
   return string.trim().toLowerCase().split("").reduce((acc, letter) => { return array.includes(letter) ? acc + 1 : acc }, 0);
 }
@@ -43,10 +43,10 @@ function countVowels(string, array) {
  */
 function getNegativeValues(array) {
   if (!array instanceof Array) throw new TypeError('Need a Array');
-  return array.map(value => value > 0 ? value - value * 2 : value)
+  return array.map(value => value > 0 ? value *-1 : value)
 }
 
-// console.log(getNegativeValues([3,0,-7, 44, 1, 23, 4, 11, 31, 12, 48]))
+console.log(getNegativeValues([3,0,-7, 44, 1, 23, 4, 11, 31, 12, 48]))
 
 /*4. Написать функцию, которая принимает массив и возвращает новый массив,
  состоящий только из уникальных значений первого массива (значения не должны повторяться).*/
