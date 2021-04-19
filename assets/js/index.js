@@ -35,9 +35,9 @@ function countIncludes(string, array) {
  */
 function getNegativeValues(array) {
   if (!array instanceof Array) throw new TypeError('Need a Array');
-  return array.map(value => value > 0 ? value * -1 : value)
+  return array.filter(value => value < 0)
 }
-// console.log(getNegativeValues([3, 0, -7, 44, 1, 23, 4, 11, 31, 12, 48]))
+console.log(getNegativeValues([3, 0, -7, 44, 1, 23, -4, 11, 31, -12, 48]))
 /******************************************************/
 /*4. Написать функцию, которая принимает массив и возвращает новый массив,
  состоящий только из уникальных значений первого массива (значения не должны повторяться).*/
