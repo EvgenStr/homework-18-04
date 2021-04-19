@@ -52,3 +52,25 @@ function getUniqueValues(array) {
   return result;
 }
 // console.log(getUniqueValues([4, 5, 2, 3, 4, 21, 32, 1, 1, 2, 1, 2, 4]), 'unique')
+
+const arr1 = [3, 5, 2, 5, 6, 7];
+const arr2 = [4, 6, 3, 2, 4, 56, 7, 56, 542, 2, 1, 1]
+const test = [...new Set([...arr1, ...arr2])]
+
+const mon = {
+  test: {
+    test2: {
+      val1: "val1-test",
+    },
+    test3: {
+      val2: "val2"
+    }
+  }
+}
+const {
+  test2: {
+    val1: cons
+  }
+}= mon.test;
+
+console.log(cons)
