@@ -71,6 +71,60 @@ const {
   test2: {
     val1: cons
   }
-}= mon.test;
+} = mon.test;
 
-console.log(cons)
+// console.log(cons)
+
+const obj = {
+  test1: "test1",
+  test2: "test2",
+  test3: "test3",
+  test4: "test4",
+  test5: "test5",
+}
+function rest({ test1, test2, ...params }) {
+  console.log(test1, test2, params);
+}
+rest(obj)
+
+const monitor = {
+  sizes: {
+    height: {
+      value: 25,
+      scale: "cm",
+    },
+    width: {
+      value: 55,
+      scale: "cm",
+    }
+  },
+  color: "green",
+  dpi: 400,
+}
+function getMonitorInfo({
+  sizes: {
+    height: { value: hVal, scale: hScale },
+    width: { value: wVal, scale: wScale }
+  },
+  color, dpi }) {
+  console.log(`Height: ${hVal} ${hScale},\nWidth: ${wVal} ${wScale},\ncolor: ${color},\ndpi: ${dpi} `);
+}
+
+
+const guess = (start, end) => {
+  let middle = Math.floor(start + end / 2)
+  while (true) {
+    if (start === end) return start;
+    if (confirm(`${middle} its your value?`)) {
+      return middle;
+    }
+    if (confirm(` your value > ${middle} ?`)) {
+      start = middle;
+      middle = Math.ceil((start + end) / 2);
+    } else {
+      end = middle;
+      middle = Math.floor((start + end) / 2);
+    }
+
+  }
+}
